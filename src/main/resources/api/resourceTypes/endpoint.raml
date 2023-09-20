@@ -1,0 +1,20 @@
+#%RAML 1.0 ResourceType
+get:
+  responses:
+    200:
+      body:
+        type: <<endpointType>>
+post?:
+  body:
+   type: <<endpointType>>
+  responses:
+      201:
+        headers:
+          created-item:
+           type: object
+           example: {"created-item-id" : "123gfd"}
+        body:
+          type: object
+          example: {"Status" : "Created"}
+
+  

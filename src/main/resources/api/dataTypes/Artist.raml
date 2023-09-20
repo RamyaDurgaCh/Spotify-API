@@ -1,0 +1,26 @@
+#%RAML 1.0 DataType
+properties:
+  id:
+    type: string
+    required: true
+    example: "SST"
+  firstName:
+    type: string
+    required: true
+    example: "Thaman"
+  lastName:
+    type: string
+    required: true
+    example: "SS"
+  birthday:
+    type: date-only
+    example: 1993-02-21
+    required: false
+  otherAlbums:
+    type: string[]
+    example: ["ddk","saag","bsm","sdg","bro"]
+    required: true
+  releaseDate:
+    type: date-only
+    example: 2023-08-03
+

@@ -1,0 +1,15 @@
+#%RAML 1.0 Library
+usage: This Library defines some commonly used fragments.
+
+traits:
+  errorResponses: !include traits/errorResponses.raml
+
+resourceTypes:
+  spotifyCollection: !include resourceTypes/resourceType.raml
+  spotifyCollectionId: !include resourceTypes/resourceTypeId.raml
+  healthCheck: !include resourceTypes/healthCheck.raml
+
+securitySchemes:
+  basicSecurityScheme: !include securitySchemes/basicSecurityScheme.raml
+  customSecurityScheme: !include securitySchemes/customSecurityScheme.raml
+

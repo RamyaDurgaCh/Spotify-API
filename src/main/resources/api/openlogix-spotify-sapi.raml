@@ -1,0 +1,66 @@
+#%RAML 1.0
+title: Spotify System API
+description: This Spotify API a Music servie which will enable users to listen to songs,access albums,artists and access all other details which are related to music. This System API will show the list of songs,albums,artists available in the API.
+mediaType: [application/json] 
+protocols: [HTTP, HTTPS]
+baseUri: /api/{version} 
+version: v1
+
+uses:
+  common: /exchange_modules/79669335-82b2-4e0c-8be6-dc98ed069a43/common-fragments/1.0.1/common-fragments.raml
+
+securedBy: [common.basicSecurityScheme, common.customSecurityScheme ]
+
+types:
+  Song: !include dataTypes/Song.raml
+  Artist: !include dataTypes/Artist.raml
+  Album: !include dataTypes/Album.raml
+
+/health:
+  type:
+    common.healthCheck
+
+/songs:
+  get:
+  is: [common.errorResponses]
+  type:
+     common.spotifyCollection:
+       endpointType: Song[]
+
+  /{id}:
+    get:
+    is: [common.errorResponses]
+    type:
+       common.spotifyCollectionId:
+         endpointType: Song
+
+/artists: 
+  get:
+  is: [common.errorResponses]
+  type:
+   common.spotifyCollection:
+     endpointType: Artist[]
+  /{id}:
+    get:
+    is: [common.errorResponses]
+    type:
+      common.spotifyCollectionId:
+        endpointType: Artist
+
+    
+/albums:
+  get:
+  is: [common.errorResponses]
+  type:
+   common.spotifyCollection:
+     endpointType: Album[]
+
+  /{id}:
+    get:
+    is: [common.errorResponses]
+    type:
+      common.spotifyCollectionId:
+        endpointType: Artist
+
+      
+      

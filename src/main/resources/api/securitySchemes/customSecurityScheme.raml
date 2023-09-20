@@ -1,0 +1,29 @@
+#%RAML 1.0 SecurityScheme
+type: x-token-authorization
+description: 
+describedBy:
+  headers:
+    client_id:
+      type: string
+      example: "1234"
+      required: true
+      minLength: 2
+    client_secret:
+     type: string 
+     example: "3456"
+     required: true
+     minLength: 2
+  responses:
+    400:
+      body:
+        application/json:
+          type: object
+          example: {"400": "Bad Request"}
+    401:
+      body:
+        application/json:
+          type: object
+          example: {"401" : "Unauthorized Access"}
+          
+     
+

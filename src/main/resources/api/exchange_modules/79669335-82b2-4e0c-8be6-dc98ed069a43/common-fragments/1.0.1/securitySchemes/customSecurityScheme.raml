@@ -1,0 +1,33 @@
+#%RAML 1.0 SecurityScheme
+type: x-token-authorization
+description: This authorizes that the token is available in authorization header.
+describedBy:
+  headers: 
+    client_id:
+      type: string
+      minLength: 3
+      maxLength: 10
+      required: true
+    client_secret:
+      type: string
+      minLength: 3
+      required: true
+  responses:
+    400:
+      body:
+        application/json:
+          example:
+            {
+              "400": "Bad Request"
+            }
+    401:
+      body:
+        application/json:
+          example:
+            {
+                    "401" : "Unauthorized-access requested"
+            }
+
+            
+      
+      

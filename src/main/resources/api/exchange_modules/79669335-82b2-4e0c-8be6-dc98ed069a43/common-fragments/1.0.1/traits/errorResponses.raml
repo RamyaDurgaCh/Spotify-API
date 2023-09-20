@@ -1,0 +1,34 @@
+#%RAML 1.0 Trait
+responses:
+  400:
+    body:
+      application/json:
+        type: object
+        example:
+          {
+            "400": :" Bad request.Invalid <<resourcePathName>>"
+          }
+  401:
+    body:
+      application/json:
+        type: object
+        example:
+          {
+            "401": "Unauthorized.only premium viewers can listen to  this"
+          }
+  404:
+    body:
+      application/json:
+        type: object
+        example:
+          {
+            "404": "<<resourcePathName>> Not found"
+          }
+  500:
+    body:
+      application/json:
+        type: object
+        example:
+          {
+            "500" :"internal server error."
+          }
